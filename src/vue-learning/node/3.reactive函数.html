@@ -19,6 +19,16 @@
         - reactive定义的响应式数据是‘深层次的’
         - 内部基于es6的proxy实现，通过代理对象操作源对象来实现
         */
+
+        /*
+        ref 对比 reactive
+        定义数据： ref：基本类型数据（也可以定义对象或数组，内部会进行转换）
+                  reactive：对象（或数组）类型数据
+        原理： ref通过object.defineProperty()的get和set来实现响应式
+              reactive通过proxy来实现响应式，并通过reflect操作源对象内部的数据
+        使用角度：ref操作数据需要.value，读取数据时模板不需要
+                 reactive均不需要.value
+        */
     </script>
 
 </body>

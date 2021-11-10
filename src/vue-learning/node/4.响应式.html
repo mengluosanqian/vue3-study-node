@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 通过this.$set 或者 vue.set 来给对象添加属性，并实现响应式
+        // 通过this.$delete 或者 vue.delete 来给对象添加属性，并实现响应式
+
+        // 模拟vue3实现响应式
+        let person = {
+            name: '张三',
+            age: 24
+        }
+        const p = new Proxy(person,{
+            get(target,propName) {
+                console.log(`读取p上的${propName}属性`,target,propName);
+                // return target[propName]
+                return Reflect.get(target,propName)
+            },
+            set(target,propName,value){
+                console.log(`修改p上的${propName}属性`,target,propName); 
+                // target[propName] = value
+                Reflect.set(target,propName,value)
+            },
+            deleteProperty(target,propName) {
+                console.log(`删除p上的${propName}属性`,target,propName); 
+                // return delete target[propName]
+                return Reflect.deleteProperty(target,propName)
+            }
+        })
+
+        let obj = {
+            a: 1,
+            b: 2
+        }
+        let x1 = Reflect.defineProperty(obj,'c',{
+            get() {
+                return 3
+            }
+        })
+        let x2 = Reflect.defineProperty(obj,'c',{
+            get() {
+                return 4
+            }
+        })
+        console.log('111111',obj,x1,x2);
+    </script>
+</body>
+</html>
