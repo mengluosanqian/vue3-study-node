@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let person = reactive({
+            firsrName: '张',
+            lastName: '三',
+        });
+        // 计算属性 -- 简写（没有考虑计算属性被修改的情况）
+        person.fullName = computed(() => {
+            return person.firsrName + '-' + person.lastName
+        })
+        // 计算属性 -- 完整写法（考虑读写）
+        person.fullName = computed({
+            get() {
+                return person.firsrName + '-' + person.lastName
+            },
+            set(value) {
+                const nameArr = value.split('-')
+                person.firsrName = nameArr[0]
+                person.lastName = nameArr[1]
+            }
+        })
+    </script>
+</body>
+
+</html>
