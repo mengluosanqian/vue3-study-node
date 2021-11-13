@@ -1,5 +1,5 @@
 <template>
-  <h1></h1>
+  <h1>{{msg}}111111111</h1>
   <button @click="test">测试向父组件传值</button>
 </template>
 

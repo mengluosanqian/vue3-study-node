@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        全局API调整
+        2.x 全局API（Vue）                     3.x 实例API（app）
+        Vue.config.xxxx                       app.config.xxx
+        Vue.config.productionTip              移除
+        Vue.component                         app.component
+        Vue.directive                         app.directive
+        Vue.mixin                             app.mixin
+        Vue.use                               app.use
+        Vue.prototype                         app.config.globalProperties
+        */
+       /*
+       其他改变
+            - data始终被声明为一个函数
+            - 过度类名的更改
+            - 移除keyCode作为v-on的修饰符，同时也不再支持config.keyCodes
+            - 移除v-on.native修饰符（区分@click等是原生事件还是自定义事件）vue3中子组件有emits:[]
+            - 移除filter（过滤器）
+       */
+    </script>
+</body>
+</html>

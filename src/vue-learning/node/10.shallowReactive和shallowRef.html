@@ -9,10 +9,13 @@
 <body>
     <script>
         /*
-        setup执行的时机：
-            在beforeCreate之前执行一次，this是undefined
-        setup的参数：
-            见：src\vue-learning\src\test.vue
+        shallowReactive：
+            - 只考虑第一层的响应式
+        shallowRef:
+            - 如果传入的是对象，则不是响应式
+            - 只处理基本类型的响应式
+        
+        详见：src\vue-learning\src\test-shallow.vue
         */
     </script>
 </body>

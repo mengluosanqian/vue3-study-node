@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        新的组件：
+            1.fragment
+                - vue3可以没有根标签，内部会将多个标签包含在一个fragment虚拟元素中
+                - 减少标签层级、减少内存占用
+            2.teleport
+                - 将组件html结构移动到指定位置的技术
+                - <teleport to="要移到到的地方">要移动的代码</teleport>
+            3.Suspense
+                - 静态引入和异步引入见：src\vue-learning\src\test-customRef.vue
+                - 异步引入组件，使用Suspense 包裹组件，并配置好default和fallback
+                <Suspense>
+                    <template v-slot:default>
+                        <TestTeleport :show="show" @open="open" @close="close" />
+                    </template>
+                    <template v-slot:fallback>
+                        <h3>加载中</h3>
+                    </template>
+                </Suspense>
+        */
+        
+    </script>
+</body>
+</html>

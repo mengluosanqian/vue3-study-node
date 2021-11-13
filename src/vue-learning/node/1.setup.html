@@ -19,7 +19,8 @@
                     2.x的配置（data，methods，computed）可以访问到setup中的属性方法
                     setup访问不到2.x中的配置
                     有重名，setup优先
-            6.setup不能是async函数
+            6.setup不能是async函数，因为返回值不再是return的对象，而是promise,模板中看不到return对象中的属性
+            7.后期也可以返回一个promise实例，但需要Suspense和异步组件的配合
         */
     </script>
 </body>
